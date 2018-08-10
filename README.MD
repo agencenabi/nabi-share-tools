@@ -1,9 +1,12 @@
 # Nabi Share Tools
 
-A basic WordPress Share Tools with geolocation, address geocoding and search radius options.
+Add simples sharing, print and like buttons to your pages and blog posts.
 
 ## Description
-Use shortcode ```[[vdStoreMap]``` to display the Google Map. Use shortcode ```[vdStoreForm]``` to display the search form.
+Use shortcode ```[NabiShareTools]``` to display all tools at onece.
+Use shortcode ```[NabiShare]``` to display the share button.
+Use shortcode ```[NabiLike]``` to display the like button.
+Use shortcode ```[NabiPrint]``` to display the print button.
 
 ## Installation
 Install from wordpress plugins directory.
@@ -15,7 +18,7 @@ Else, to install manually:
 
 
 ## TODO
-
+* Add Custom posts types support: fields.php (line 21).
 
 
 ## Changelog
