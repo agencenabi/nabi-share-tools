@@ -3,9 +3,9 @@
 Add simples sharing, print and like buttons to your pages and blog posts.
 
 ## Description
-Use shortcode ```[NabiShareTools]``` to display all tools at onece.
-Use shortcode ```[NabiShare]``` to display the share button.
-Use shortcode ```[NabiLike]``` to display the like button.
+Use shortcode ```[NabiShareTools]``` to display all tools at once.<br>
+Use shortcode ```[NabiShare]``` to display the share button.<br>
+Use shortcode ```[NabiLike]``` to display the like button.<br>
 Use shortcode ```[NabiPrint]``` to display the print button.
 
 ## Installation
