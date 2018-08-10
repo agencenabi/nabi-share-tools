@@ -1,0 +1,21 @@
+.nb__printBtn {
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+	padding: 0 1em;
+
+	img {
+		width: 2.5em;
+		transition: 0.5s;
+
+		&:hover {
+			opacity: 0.5;
+		}
+
+	}
+
+}
+
+.nb__printLabel {
+	display: block;
+}

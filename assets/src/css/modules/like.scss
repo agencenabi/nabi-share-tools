@@ -1,0 +1,31 @@
+.nb__likes {
+	display: inline-block;
+	text-align: center;
+	padding: 0 1em;
+}
+.nb__likeBtn {
+	padding: 0;
+	background: none;
+	transition: 0.5s;
+
+	&:hover {
+		background: none;
+		opacity: 0.5;
+	}
+
+	svg {
+		width: 2.5em;
+		height: auto;
+	}
+
+	&.isDisabled {
+		fill: red;
+		cursor: default;
+
+		&:hover {
+			opacity: 1;
+		}
+
+	}
+
+}
