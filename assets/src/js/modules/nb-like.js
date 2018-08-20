@@ -28,10 +28,16 @@
 	function nb_likeBtn() {
 		$('.nb__likeBtn').click(function(){
 
+			if (window.location.href.indexOf("wordpress-sandbox") > -1) {
+				var url = '/wordpress-sandbox/wp-json/nabi-share-tools/v2/likes/';
+			} else {
+				var url = '/wp-json/nabi-share-tools/v2/likes/';
+			}
+
 			var yetLiked = localStorage['liked'];
 		    if (!yetLiked) {
 			    $.ajax({
-		            url: '/wp-json/nabi-share-tools/v2/likes/' + nbstFrontScript.post_id,
+		            url: url + nbstFrontScript.post_id,
 		            type: 'post',
 		            success: function() {
 		                console.log('works!');
@@ -49,7 +55,7 @@
 		        $(this).attr('disabled', true).addClass('isDisabled');
 
 		        // Save like action in local Storage
-		        localStorage['liked'] = "yes";
+		        localStorage['liked-' + nbstFrontScript.post_id] = "yes";
 
 		        // Lookup if more than 1 comment, then plurialize the like label
 		        if(parseInt( $('.nb__likeNbr').text()) < 3 ) {
@@ -64,7 +70,7 @@
 		});
 
 		// Disable btn when like limit (1) is reached
-		if (localStorage.getItem("liked") != null) {
+		if (localStorage.getItem('liked-' + nbstFrontScript.post_id ) != null) {
 			$('.nb__likeBtn').attr('disabled', true).addClass('isDisabled');
 		}
 
@@ -83,6 +89,7 @@
 	 */
 	return {
 		nb_likeBtn : nb_likeBtn,
+		nb_likePlurial : nb_likePlurial,
 	}
 
 })(jQuery);
