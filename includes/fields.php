@@ -4,7 +4,7 @@
 	 * Share Tools Custom fields
 	 *
 	 * @package nbst
-	 * @version 0.01
+	 * @version 1.1
 	 */
 
 	if ( ! defined( 'ABSPATH' ) ) {
