@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage nbst
- * @since nbst 1.0
+ * @since nbst 1.2
  */
  $post = get_post();
  $pageUrl = 'https://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
@@ -15,14 +15,25 @@
 ?>
 
 <div class="nb__shareBtn">
-	<img src="<?php echo plugins_url(); ?>/nabi-share-tools/assets/dist/img/share-icon.svg" alt="<?php _e('Partager cette page', 'nabi'); ?>" />
-	<span class="nb__shareLabel"><?php _e('Partager', 'nabi'); ?></span>
-	<div class="nb_shareOver">
+
+	<?php if (in_array('dropdown', $display)) {  // If display parameter is dropdown ?>
+		<img src="<?php echo plugins_url(); ?>/nabi-share-tools/assets/dist/img/share-icon.svg" alt="<?php _e('Partager cette page', 'nabi'); ?>" />
+		<span class="nb__shareLabel"><?php _e('Partager', 'nabi'); ?></span>
+		<div class="nb_shareOver">
+	<?php } if (in_array('list', $display)) {  // If display parameter is list ?>
+		<div class="nb_shareList">
+	<?php }  if (in_array('icons', $display)) {  // If display parameter is icons ?>
+		<div class="nb_shareIcons">
+	<?php } ?>
 
 		<!-- Facebook -->
 		<a onclick="Share.popup('https://www.facebook.com/sharer/sharer.php?u=<?php echo $pageUrl; ?>')">
 			<div class="facebook_share">
-				<img src="<?php echo plugins_url(); ?>/nabi-share-tools/assets/dist/img/facebook.svg" alt="<?php _e( 'Partager sur', 'nabi' ); ?> Facebook">
+				<?php if (in_array('list', $display)) {  // If display parameter is list ?>
+					<?php _e( 'Facebook', 'nabi' ); ?>
+				<?php } else { ?>
+					<img src="<?php echo plugins_url(); ?>/nabi-share-tools/assets/dist/img/facebook.svg" alt="<?php _e( 'Partager sur', 'nabi' ); ?> <?php _e( 'Facebook', 'nabi' ); ?>">
+				<?php } ?>
 			</div>
 		</a>
 
@@ -32,7 +43,11 @@
 			'<?php the_title(); ?> '
 			)">
 			<div class="twitter_share">
-				<img src="<?php echo plugins_url(); ?>/nabi-share-tools/assets/dist/img/twitter.svg" alt="<?php _e( 'Partager sur', 'nabi' ); ?> Twitter">
+				<?php if (in_array('list', $display)) {  // If display parameter is list ?>
+					<?php _e( 'Twitter', 'nabi' ); ?>
+				<?php } else { ?>
+					<img src="<?php echo plugins_url(); ?>/nabi-share-tools/assets/dist/img/twitter.svg" alt="<?php _e( 'Partager sur', 'nabi' ); ?> <?php _e( 'Twitter', 'nabi' ); ?>">
+				<?php } ?>
 			</div>
 		</a>
 
@@ -42,14 +57,22 @@
 			'<?php bloginfo('name'); ?>'
 		)">
 			<div class="linkedin_share">
-				<img src="<?php echo plugins_url(); ?>/nabi-share-tools/assets/dist/img/linkedin.svg" alt="<?php _e( 'Partager sur', 'nabi' ); ?> Linkedin">
+				<?php if (in_array('list', $display)) {  // If display parameter is list ?>
+					<?php _e( 'LinkedIn', 'nabi' ); ?>
+				<?php } else { ?>
+					<img src="<?php echo plugins_url(); ?>/nabi-share-tools/assets/dist/img/linkedin.svg" alt="<?php _e( 'Partager sur', 'nabi' ); ?> <?php _e( 'LinkedIn', 'nabi' ); ?>">
+				<?php } ?>
 			</div>
 		</a>
 
 		<!-- Pinterest -->
 		<a onclick="Share.popup('http://pinterest.com/pin/create/link/?url=<?php echo $pageUrl; ?>&media=<?php echo $pageThumbnail; ?>&description=<?php echo $pageDescription; ?>')">
 			<div class="pinterest_share">
-				<img src="<?php echo plugins_url(); ?>/nabi-share-tools/assets/dist/img/pinterest.svg" alt="<?php _e( 'Partager sur', 'nabi' ); ?> Pinterest">
+				<?php if (in_array('list', $display)) {  // If display parameter is list ?>
+					<?php _e( 'Pinterest', 'nabi' ); ?>
+				<?php } else { ?>
+					<img src="<?php echo plugins_url(); ?>/nabi-share-tools/assets/dist/img/pinterest.svg" alt="<?php _e( 'Partager sur', 'nabi' ); ?> <?php _e( 'Pinterest', 'nabi' ); ?>">
+				<?php } ?>
 			</div>
 		</a>
 
