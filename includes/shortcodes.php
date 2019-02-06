@@ -3,7 +3,7 @@
  * Share Tools Shortcodes
  *
  * @package nbst
- * @version 0.1
+ * @version 1.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,12 +25,22 @@ function nbst_get_template( $template_name, $args = array(), $tempate_path = '',
 
 
 // Create the Share Shortcode
-function nabi_sc_share() {
+function nabi_sc_share($atts = [], $content = null, $tag = '') {
+
+    // normalize attribute keys, lowercase
+    $atts = array_change_key_case((array)$atts, CASE_LOWER);
+
+    // override default attributes with user attributes
+    $display = shortcode_atts([
+        'display' => 'dropdown',
+    ], $atts, $tag);
+
 	ob_start();
 	include_once('template/share.php');
 	return ob_get_clean();
 }
 add_shortcode( 'NabiShare', 'nabi_sc_share' );
+
 
 // Create the Like Shortcode
 function nabi_sc_like() {
