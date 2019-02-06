@@ -27,13 +27,17 @@ function nbst_get_template( $template_name, $args = array(), $tempate_path = '',
 // Create the Share Shortcode
 function nabi_sc_share($atts = [], $content = null, $tag = '') {
 
-    // normalize attribute keys, lowercase
-    $atts = array_change_key_case((array)$atts, CASE_LOWER);
-
-    // override default attributes with user attributes
-    $display = shortcode_atts([
-        'display' => 'dropdown',
-    ], $atts, $tag);
+	// normalize attribute keys, lowercase
+	$atts = array_change_key_case((array)$atts, CASE_LOWER);
+	
+	// override default attributes with user attributes
+	$display = shortcode_atts([
+	    'display' => 'dropdown',
+	], $atts, $tag);
+	
+	$shareurl = shortcode_atts([
+	    'url' => 'https://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
+	], $atts, $tag);
 
 	ob_start();
 	include_once('template/share.php');
