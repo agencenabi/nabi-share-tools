@@ -3,7 +3,7 @@
 * Plugin Name: Nabi Share Tools
 * Plugin URI: https://agencenabi.com
 * Description: Add simples sharing, print and like buttons to your pages and blog posts.
-* Version: 1.1
+* Version: 1.2
 * Author: Marc-André Lavigne
 * Author URI: https://agencenabi.com
 * License: GPLv2 or later
@@ -11,7 +11,7 @@
 
 function version() {
 	global $version;
-	$version = '1.1';
+	$version = '1.2';
 }
 
 // include_once( 'includes/settings.php' );
