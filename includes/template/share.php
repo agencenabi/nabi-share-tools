@@ -11,6 +11,7 @@
  $pageTitle = get_the_title();
  $pageDescription = "";
  $pageThumbnail = get_the_post_thumbnail_url($post->ID, 'full');
+ $pageUrl = $shareurl['url'];
 
 ?>
 
