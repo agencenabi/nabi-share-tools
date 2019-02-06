@@ -46,13 +46,6 @@
 			</div>
 		</a>
 
-		<!-- Google+ -->
-		<a onclick="Share.popup('https://plus.google.com/share?url=<?php echo $pageUrl; ?>', '<?php bloginfo('name'); ?>')">
-			<div class="google_share">
-				<img src="<?php echo plugins_url(); ?>/nabi-share-tools/assets/dist/img/googleplus.svg" alt="<?php _e( 'Partager sur', 'nabi' ); ?> Google+">
-			</div>
-		</a>
-
 		<!-- Pinterest -->
 		<a onclick="Share.popup('http://pinterest.com/pin/create/link/?url=<?php echo $pageUrl; ?>&media=<?php echo $pageThumbnail; ?>&description=<?php echo $pageDescription; ?>')">
 			<div class="pinterest_share">
