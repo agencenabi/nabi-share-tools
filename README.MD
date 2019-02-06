@@ -16,6 +16,12 @@ Else, to install manually:
 1. Upload unzipped plugin folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
+## Parameters
+### Share Display:
+The Share Buttons Display parameter will allow you to select how you want the Sharing buttons to be displayed. You can choose between ```dropdown```, ```list``` and ```icons```. Dropdown is the default display.
+Ex.: ```[NabiShare display="icons"]```
+
+
 ## Update function
 Use ```nb_sharingTools.update();``` to reinint all the Sharing tools.
 
@@ -24,6 +30,9 @@ Use ```nb_sharingTools.update();``` to reinint all the Sharing tools.
 
 
 ## Changelog
+** 1.2 **
+* New Display paramater added to Share Button shortcode
+* Google+ Sharing option removed.
 
 ** 1.1 **
 * Added an Update function, to allow to reinint the function when content is loaded in ajax.
