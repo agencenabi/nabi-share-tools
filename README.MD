@@ -18,8 +18,12 @@ Else, to install manually:
 
 ## Parameters
 ### Share Display:
-The Share Buttons Display parameter will allow you to select how you want the Sharing buttons to be displayed. You can choose between ```dropdown```, ```list``` and ```icons```. Dropdown is the default display.
+The Share Buttons Display parameter will allow you to select how you want the Sharing buttons to be displayed. You can choose between ```dropdown```, ```list``` and ```icons```. Dropdown is the default display.<br />
 Ex.: ```[NabiShare display="icons"]```
+
+### Share URL:
+The Share Buttons URL parameter let you define a specific URL to share. By default, the current page URL the button is displayed on will be shared.<br />
+Ex.: ```[NabiShare url="https://example.com/your-custom-url"]```
 
 
 ## Update function
@@ -31,7 +35,8 @@ Use ```nb_sharingTools.update();``` to reinint all the Sharing tools.
 
 ## Changelog
 ** 1.2 **
-* New Display paramater added to Share Button shortcode
+* New Display parameter added to Share Button shortcode
+* New URL parameter added to Share Button shortcode
 * Google+ Sharing option removed.
 
 ** 1.1 **
